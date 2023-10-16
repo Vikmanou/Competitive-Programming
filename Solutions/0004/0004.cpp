@@ -1,8 +1,8 @@
 #include <iostream>
 #include <string>
+#include <algorithm>
 
-int main()
-{
+int main() {
 	bool ans = false;
 	unsigned long long largest = 0;
 	

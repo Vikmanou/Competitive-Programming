@@ -2,7 +2,7 @@
 
 #include <cmath>
 
-bool isPrime(long long x) {
+bool isPrime(long long x) { // TODO: Something's wrong.
     if (x < 2 || x%2 == 0) return false;
     if (x == 2) return true;
 
