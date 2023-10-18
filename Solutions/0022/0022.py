@@ -1,7 +1,7 @@
+import json
+
 def m():
-    import json
-    
-    with open('input.json', 'r') as file:
+    with open('Solutions/0022/input.json', 'r') as file:
         f = file.read()
         file.close()
     names = json.loads(f)
