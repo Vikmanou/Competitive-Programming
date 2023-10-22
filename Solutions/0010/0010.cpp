@@ -1,5 +1,5 @@
 #include <iostream>
-#include "../../Util/Prime.hpp"
+#include "../../Util/Math.hpp"
 
 int main() {
     long long ans = 5;
