@@ -3,6 +3,7 @@
 #include <cmath>
 #include "./BigNumber.hpp"
 
+typedef unsigned long long ull;
 
 std::string bigFactorial(int n) {
     std::string ans = "1";
@@ -45,4 +46,17 @@ bool isPrime(int num) {
     }
     
     return true;
+}
+
+
+std::vector<bool> getSieve(ull n) {
+    std::vector<bool> sieve(n, true);
+
+    for (ull i = 2; i < n; ++i) {
+		for (ull j = i; j*i < n; ++j) {
+			sieve[j*i] = false;
+		}
+	}
+
+    return sieve;
 }
