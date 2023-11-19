@@ -1,29 +1,28 @@
 #include <iostream>
-#include <string>
+#include <vector>
 #include "../../Util/Math.hpp"
 
 
 int main() {
-    int nth = 0;
-    int nthVal = 0;
+    std::vector<bool> sieve = getSieve(300);
 
-    for (int i = 1; nth < 67; ++i) {
-        const std::string nStr = std::to_string(i);
+    int nth = -3;
+
+    for (int i = 1; nth < 61; ++i) {
         int digitSum = 0;
+        int number = i;
 
-        for (int j = 0; j < nStr.length(); ++j) {
-            digitSum += nStr[j] - '0';
+        while (number > 0) {
+            digitSum += number % 10;
+            number /= 10;
         }
 
-        if (isPrime(digitSum)) {
-            nth++;
-            nthVal = i;
+        if (sieve[digitSum]) {
+            ++nth;
 
             std::cout << i << '\n';
         }
     }
-
-    std::cout << nthVal;
 
     return 0;
 }
