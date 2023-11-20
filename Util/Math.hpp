@@ -5,6 +5,7 @@
 
 typedef unsigned long long ull;
 
+
 std::string bigFactorial(int n) {
     std::string ans = "1";
 
@@ -36,16 +37,27 @@ int totient(int n) {
 }
 
 
-bool isPrime(int num) {
+bool isPrime(ull num) {
     if (num <= 1) return false;
     if (num <= 3) return true;
     if (num % 2 == 0 || num % 3 == 0) return false;
     
-    for (int i = 5; i * i <= num; i += 6) {
+    for (ull i = 5; i * i <= num; i += 6) {
         if (num % i == 0 || num % (i + 2) == 0) return false;
     }
     
     return true;
+}
+
+
+std::vector<ull> listPrimes(ull n) {
+    std::vector<ull> primes = {2};
+
+    for (ull i = 3; i < n; i += 2) {
+        if (isPrime(i)) primes.push_back(i);
+    }
+
+    return primes;
 }
 
 
@@ -62,8 +74,8 @@ std::vector<bool> getSieve(ull n) {
 }
 
 
-unsigned long long reverseNum(unsigned long long n) {
-    unsigned long long res = 0;
+ull reverseNum(ull n) {
+    ull res = 0;
 
     while (n > 9) {
         short digit = n%10;
@@ -76,9 +88,26 @@ unsigned long long reverseNum(unsigned long long n) {
 }
 
 
-int getLeftDigit(unsigned long long n) {
+int getLeftDigit(ull n) {
     while (n >= 10) {
         n /= 10;
     }
     return n;
+}
+
+
+std::vector<ull> getFactors(ull n) {
+    std::vector<ull> ret;
+
+    for (int i = 1; i < std::sqrt(n); ++i) {
+        if (n%i == 0) {
+            if (n/i == i) ret.push_back(i);
+            else {
+                ret.push_back(i);
+                ret.push_back(n/i);
+            }
+        }
+    }
+
+    return ret;
 }
