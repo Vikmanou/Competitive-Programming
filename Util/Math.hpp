@@ -60,3 +60,25 @@ std::vector<bool> getSieve(ull n) {
 
     return sieve;
 }
+
+
+unsigned long long reverseNum(unsigned long long n) {
+    unsigned long long res = 0;
+
+    while (n > 9) {
+        short digit = n%10;
+        res *= 10;
+        res += digit;
+        n /= 10;
+    }
+
+    return res*10 + n;
+}
+
+
+int getLeftDigit(unsigned long long n) {
+    while (n >= 10) {
+        n /= 10;
+    }
+    return n;
+}

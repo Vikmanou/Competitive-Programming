@@ -8,7 +8,7 @@ int main() {
 
     int nth = -3;
 
-    for (int i = 1; nth < 61; ++i) {
+    for (int i = 2000; nth < 61; ++i) {
         int digitSum = 0;
         int number = i;
 
