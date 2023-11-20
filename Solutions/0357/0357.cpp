@@ -10,12 +10,12 @@ int main() {
     unsigned long long ans = 1;
 
     for (unsigned long long i = 2; i < LIMIT; i += 4) {
-        if (!isPrime(1+i) || !isPrime(2 + i/2)) continue;
+        if (!sieve[i+1] || !sieve[i/2 + 2]) continue;
 
         std::vector<unsigned long long> factorsi = getFactors(i);
 
         bool pass = true;
-        for (int j = 2; j < factorsi.size(); ++j) {
+        for (int j = 2; j < factorsi.size()-1; ++j) {
             unsigned long long d = factorsi[j];
             if (!sieve[d + i/d]) {
                 pass = false;
