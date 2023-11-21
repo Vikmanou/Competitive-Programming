@@ -4,25 +4,20 @@
 
 
 int main() {
-    std::vector<bool> sieve = getSieve(300);
+    std::vector<bool> sieve = getSieve(100'000'000);
 
     int nth = -3;
 
-    for (int i = 2000; nth < 61; ++i) {
-        int digitSum = 0;
-        int number = i;
-
-        while (number > 0) {
-            digitSum += number % 10;
-            number /= 10;
-        }
-
-        if (sieve[digitSum]) {
+    for (unsigned long long i = 1; nth < 100'000'000; ++i) {
+        if (sieve[digitSum(i)]) {
             ++nth;
 
             std::cout << i << '\n';
         }
     }
+
+    int a;
+    std::cin >> a;
 
     return 0;
 }
