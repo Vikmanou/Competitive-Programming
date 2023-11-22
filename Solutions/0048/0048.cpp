@@ -4,7 +4,7 @@
 
 
 std::string nPowern(int n) {
-    std:: string result = "1";
+    std::string result = "1";
 
     for (int i = 0; i < n; ++i) {
         result = multiplyBigNumbers(result, std::to_string(n));

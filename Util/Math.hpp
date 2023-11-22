@@ -70,17 +70,6 @@ bool isPrime(ull num) {
 }
 
 
-std::vector<ull> listPrimes(ull n) {
-    std::vector<ull> primes = {2};
-
-    for (ull i = 3; i < n; i += 2) {
-        if (isPrime(i)) primes.push_back(i);
-    }
-
-    return primes;
-}
-
-
 std::vector<bool> getSieve(ull n) {
     std::vector<bool> sieve(n, true);
 
@@ -91,6 +80,18 @@ std::vector<bool> getSieve(ull n) {
 	}
 
     return sieve;
+}
+
+
+std::vector<ull> listPrimes(ull n) {
+    std::vector<bool> sieve = getSieve(n);
+    std::vector<ull> primes = {2};
+
+    for (ull p = 2; p <= n; ++p) {
+        if (sieve[p]) primes.push_back(p);
+    }
+
+    return primes;
 }
 
 
@@ -119,7 +120,7 @@ int getLeftDigit(ull n) {
 std::vector<ull> getFactors(ull n) {
     std::vector<ull> ret;
 
-    for (int i = 1; i < std::sqrt(n); ++i) {
+    for (int i = 1; i*i <= n; ++i) {
         if (n%i == 0) {
             if (n/i == i) ret.push_back(i);
             else {
@@ -154,6 +155,18 @@ bool isDigitPermutation(ull num1, ull num2) {
     }
 
     return true;
+}
+
+
+bool isnPandigital(int n) {
+    std::string numStr = std::to_string(n);
+
+    std::sort(numStr.begin(), numStr.end());
+
+    std::string reference = "123456789";
+    reference = reference.substr(0, numStr.length());
+
+    return numStr == reference;
 }
 
 
