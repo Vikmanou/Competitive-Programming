@@ -57,7 +57,8 @@ std::vector<ull> listTotient(ull n) {
 }
 
 
-bool isPrime(ull num) {
+template<typename someNumber>
+bool isPrime(someNumber num) {
     if (num <= 1) return false;
     if (num <= 3) return true;
     if (num % 2 == 0 || num % 3 == 0) return false;
