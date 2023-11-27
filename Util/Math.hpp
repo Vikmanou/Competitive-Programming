@@ -110,6 +110,20 @@ ull reverseNum(ull n) {
 }
 
 
+bool isPalindrome(unsigned long long num) {
+    unsigned long long originalNum = num;
+    unsigned long long reversedNum = 0;
+
+    while (num > 0) {
+        unsigned long long digit = num % 10;
+        reversedNum = reversedNum * 10 + digit;
+        num /= 10;
+    }
+
+    return originalNum == reversedNum;
+}
+
+
 int getLeftDigit(ull n) {
     while (n >= 10) {
         n /= 10;
