@@ -37,15 +37,10 @@ int main() {
 
             if (dist < shortestDistance) shortestDistance = dist;
         }
-
-        std::cout << i << '\n';
     }
 
     shortestDistance = std::sqrt(shortestDistance);
     std::cout << std::setprecision(23) << shortestDistance;
-
-    int a;
-    std::cin >> a;
 
     return 0;
 }
