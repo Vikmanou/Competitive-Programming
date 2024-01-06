@@ -1,0 +1,1 @@
+for i=1,100 do f=i%5==0 print(i%3==0 and(f and'FizzBuzz'or'Fizz')or f and'Buzz'or i)end

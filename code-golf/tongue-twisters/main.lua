@@ -1,0 +1,2 @@
+p=print
+a=('How muchqpaqz z,\nIf aqz could zq?\nAqzpz all theq he could z\nIf aqzpzq.\n'):gsub('[zqp]',{q=' wood',z='chuck',p=' would '})b=('mqed azofqledw.\nAzofqledw mqed.\nIf mqed azofqledw,\nWhere\'s thezofqledw mqed?\n'):gsub('[qwmz]',{q=' pick',w=' peppers',m='Peter Piper',z=' peck '})c=('Shewzqx by the zshore,\nThe qx qware zqx, I\'m sure.\nSo if qwzqx on the zshore,\nThen I\'m sure qwzshore qx.'):gsub('[qwzx]',{q='she',z='sea',w=' sells ',x='lls'})p(a)p(b)p(c)

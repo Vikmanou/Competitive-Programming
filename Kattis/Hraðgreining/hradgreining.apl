@@ -1,0 +1,1 @@
+⎕ ← {0<+/'COV'⍷⍞:'Veikur!' ⋄ 'Ekki veikur!'} ⍬
