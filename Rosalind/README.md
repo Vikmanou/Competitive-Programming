@@ -6,6 +6,9 @@ Part of the [Competitive-Programming](https://github.com/Vikmanou/Competitive-Pr
 
 Every solution here is a pure function of `(input: string) -> string`, kept in plain files on disk and synced into the Roblox instance tree by [Argon](https://argon.wiki).
 
+# TODO
+Ensure project can be ran directly through terminal and not necessarily Roblox Studio. Essentially an implementation for Lute or Lune.
+
 ---
 
 ## Why Luau
