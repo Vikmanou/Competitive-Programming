@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 #include <unordered_set>
-#include "../../Util/BigNumber.hpp"
+#include <pe/bignum.hpp>
+using namespace pe;
 
 
 std::string nPowerm(int n, int m) {

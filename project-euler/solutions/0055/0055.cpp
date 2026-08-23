@@ -1,5 +1,6 @@
 #include <iostream>
-#include "../../Util/Math.hpp"
+#include <pe/math.hpp>
+using namespace pe;
 
 
 bool isLyrchelNum(unsigned long long n) {

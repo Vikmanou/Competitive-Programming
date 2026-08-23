@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
 #include <algorithm>
-#include "../../Util/Math.hpp"
+#include <pe/math.hpp>
+using namespace pe;
 
 
 int main() {

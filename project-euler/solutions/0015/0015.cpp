@@ -3,8 +3,8 @@
 
 typedef std::vector<std::vector<long long>> memo_t;
 
-int GRID_X = 20;
-int GRID_Y = 20;
+constexpr int GRID_X = 20;
+constexpr int GRID_Y = 20;
 
 long long traverse(int x, int y, memo_t &memo) {
     if (x == GRID_X && y == GRID_Y) return 1;

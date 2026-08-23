@@ -31,3 +31,10 @@
 # Precompiled Headers
 *.gch
 *.pch
+
+# Build output
+build/
+
+# clangd
+.cache/
+compile_commands.json

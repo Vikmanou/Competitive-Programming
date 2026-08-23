@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "../../Util/Math.hpp"
+#include <pe/math.hpp>
+using namespace pe;
 
 
 int main() {

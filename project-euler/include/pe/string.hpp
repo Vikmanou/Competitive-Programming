@@ -1,6 +1,11 @@
+#pragma once
+
 #include <string>
 
+namespace pe {
 
-bool isPalindrome(std::string s) {
+inline bool isPalindrome(std::string s) {
     return s == std::string(s.rbegin(), s.rend());
 }
+
+}  // namespace pe

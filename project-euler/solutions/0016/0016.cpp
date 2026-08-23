@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
-#include "../../Util/BigNumber.hpp"
+#include <pe/bignum.hpp>
+using namespace pe;
 
 
 int main() {

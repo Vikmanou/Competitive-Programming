@@ -1,7 +1,7 @@
 #include <iostream>
 
 
-int BELOW = 999;
+constexpr int BELOW = 999;
 
 int main() {
     // Idea: n(1) + n(2) + n(3) + ...

@@ -1,7 +1,8 @@
 #include <iostream>
 #include <string>
-#include "../../Util/BigNumber.hpp"
-#include "../../Util/Math.hpp"
+#include <pe/bignum.hpp>
+#include <pe/math.hpp>
+using namespace pe;
 
 int main() {
     std::string fact = bigFactorial(100);

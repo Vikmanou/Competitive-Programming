@@ -1,6 +1,7 @@
 #include <iostream>
 #include <algorithm>
-#include "../../Util/Math.hpp"
+#include <pe/math.hpp>
+using namespace pe;
 
 
 bool validateConjecture(int n) {

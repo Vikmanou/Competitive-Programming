@@ -1,7 +1,8 @@
 #include <iostream>
 #include <vector>
 #include <unordered_set>
-#include "../../Util/Math.hpp"
+#include <pe/math.hpp>
+using namespace pe;
 
 
 int main() {

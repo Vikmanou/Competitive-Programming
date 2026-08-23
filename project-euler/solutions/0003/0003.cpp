@@ -1,8 +1,8 @@
 #include <iostream>
 #include <cmath>
-#include "../../Util/Math.hpp"
+#include <pe/math.hpp>
+using namespace pe;
 
-typedef unsigned long long ull;
 const ull n = 600851475143;
 
 int main() {

@@ -1,9 +1,10 @@
 #include <iostream>
 #include <string>
-#include "../../Util/Math.hpp"
+#include <pe/math.hpp>
+using namespace pe;
 
 
-const int CIRCULAR_PRIMES_UNDER = 1'000'000;
+constexpr int CIRCULAR_PRIMES_UNDER = 1'000'000;
 
 std::vector<bool> sieve = getSieve(CIRCULAR_PRIMES_UNDER);
 

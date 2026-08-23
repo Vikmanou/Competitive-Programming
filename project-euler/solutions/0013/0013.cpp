@@ -2,7 +2,8 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "../../Util/BigNumber.hpp"
+#include <pe/bignum.hpp>
+using namespace pe;
 
 
 int main() {

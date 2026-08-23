@@ -1,13 +1,18 @@
 #pragma once
 
+#include <algorithm>
 #include <cmath>
 #include <string>
-#include "./BigNumber.hpp"
+#include <vector>
 
-typedef unsigned long long ull;
+#include <pe/bignum.hpp>
+
+namespace pe {
+
+using ull = unsigned long long;
 
 
-std::string bigFactorial(int n) {
+inline std::string bigFactorial(int n) {
     std::string ans = "1";
 
     for (int i = 1; i <= n; ++i) {
@@ -18,7 +23,7 @@ std::string bigFactorial(int n) {
 }
 
 
-ull totient(ull n) {
+inline ull totient(ull n) {
     // https://cp-algorithms.com/algebra/phi-function.html
     ull result = n;
 
@@ -37,7 +42,7 @@ ull totient(ull n) {
 }
 
 
-std::vector<ull> listTotient(ull n) {
+inline std::vector<ull> listTotient(ull n) {
     // https://cp-algorithms.com/algebra/phi-function.html
     std::vector<ull> phi(n + 1);
 
@@ -62,16 +67,16 @@ bool isPrime(someNumber num) {
     if (num <= 1) return false;
     if (num <= 3) return true;
     if (num % 2 == 0 || num % 3 == 0) return false;
-    
+
     for (ull i = 5; i * i <= num; i += 6) {
         if (num % i == 0 || num % (i + 2) == 0) return false;
     }
-    
+
     return true;
 }
 
 
-std::vector<bool> getSieve(ull n) {
+inline std::vector<bool> getSieve(ull n) {
     std::vector<bool> sieve(n, true);
 
     for (ull i = 2; i < n; ++i) {
@@ -84,7 +89,7 @@ std::vector<bool> getSieve(ull n) {
 }
 
 
-std::vector<ull> listPrimes(ull n) {
+inline std::vector<ull> listPrimes(ull n) {
     std::vector<bool> sieve = getSieve(n);
     std::vector<ull> primes = {2};
 
@@ -96,7 +101,7 @@ std::vector<ull> listPrimes(ull n) {
 }
 
 
-ull reverseNum(ull n) {
+inline ull reverseNum(ull n) {
     ull res = 0;
 
     while (n > 9) {
@@ -110,7 +115,7 @@ ull reverseNum(ull n) {
 }
 
 
-bool isPalindrome(unsigned long long num) {
+inline bool isPalindrome(unsigned long long num) {
     unsigned long long originalNum = num;
     unsigned long long reversedNum = 0;
 
@@ -124,7 +129,7 @@ bool isPalindrome(unsigned long long num) {
 }
 
 
-int getLeftDigit(ull n) {
+inline int getLeftDigit(ull n) {
     while (n >= 10) {
         n /= 10;
     }
@@ -132,7 +137,7 @@ int getLeftDigit(ull n) {
 }
 
 
-std::vector<ull> getFactors(ull n) {
+inline std::vector<ull> getFactors(ull n) {
     std::vector<ull> ret;
 
     for (int i = 1; i*i <= n; ++i) {
@@ -149,7 +154,7 @@ std::vector<ull> getFactors(ull n) {
 }
 
 
-bool isDigitPermutation(ull num1, ull num2) {
+inline bool isDigitPermutation(ull num1, ull num2) {
     std::string nStr1 = std::to_string(num1);
     std::string nStr2 = std::to_string(num2);
 
@@ -173,7 +178,7 @@ bool isDigitPermutation(ull num1, ull num2) {
 }
 
 
-bool isnPandigital(int n) {
+inline bool isnPandigital(int n) {
     std::string numStr = std::to_string(n);
 
     std::sort(numStr.begin(), numStr.end());
@@ -185,7 +190,7 @@ bool isnPandigital(int n) {
 }
 
 
-int digitSum(ull n) {
+inline int digitSum(ull n) {
     int digitSum = 0;
 
     while (n > 0) {
@@ -197,7 +202,7 @@ int digitSum(ull n) {
 }
 
 
-int countDigits(ull n) {
+inline int countDigits(ull n) {
     if (n == 0) return 1;
 
     int count = 0;
@@ -209,3 +214,5 @@ int countDigits(ull n) {
 
     return count;
 }
+
+}  // namespace pe

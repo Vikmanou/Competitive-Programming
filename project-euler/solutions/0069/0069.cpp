@@ -1,6 +1,7 @@
 #include <iostream>
 #include <vector>
-#include "../../Util/Math.hpp"
+#include <pe/math.hpp>
+using namespace pe;
 
 
 const int LIMIT = 1'000'000;
