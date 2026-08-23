@@ -1,0 +1,17 @@
+{
+  "name": "Rosalind",
+  "tree": {
+    "$className": "DataModel",
+    "ReplicatedStorage": {
+      "$path": "Shared"
+    },
+    "ServerScriptService": {
+      "Rosalind": {
+        "$path": "Server/Rosalind",
+        "Problems": {
+          "$path": "Problems"
+        }
+      }
+    }
+  }
+}
