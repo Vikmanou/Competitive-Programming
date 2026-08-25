@@ -79,11 +79,16 @@ bool isPrime(someNumber num) {
 inline std::vector<bool> getSieve(ull n) {
     std::vector<bool> sieve(n, true);
 
-    for (ull i = 2; i < n; ++i) {
-		for (ull j = i; j*i < n; ++j) {
-			sieve[j*i] = false;
-		}
-	}
+    if (n > 0) sieve[0] = false;
+    if (n > 1) sieve[1] = false;
+
+    for (ull i = 2; i * i < n; ++i) {
+        if (!sieve[i]) continue;
+
+        for (ull j = i * i; j < n; j += i) {
+            sieve[j] = false;
+        }
+    }
 
     return sieve;
 }
@@ -93,7 +98,7 @@ inline std::vector<ull> listPrimes(ull n) {
     std::vector<bool> sieve = getSieve(n);
     std::vector<ull> primes = {2};
 
-    for (ull p = 2; p <= n; ++p) {
+    for (ull p = 3; p < n; ++p) {
         if (sieve[p]) primes.push_back(p);
     }
 
