@@ -15,7 +15,9 @@ run:
 	@if [ -z "$(SRC)" ]; then echo "no C++ solution for p=$(p)"; exit 1; fi
 	@mkdir -p $(BUILD)
 	@$(CXX) $(CXXFLAGS) $(OPT) $(SRC) -o $(BUILD)/$(p)$(EXT)
-	@cd $(DIR) && ../../$(BUILD)/$(p)$(EXT)
+	@cd $(DIR) && start=$$(date +%s%N) && ../../$(BUILD)/$(p)$(EXT) && end=$$(date +%s%N) && \
+		ms=$$(( (end - start) / 1000000 )) && \
+		echo && echo "Time: $${ms} ms"
 	@echo
 
 debug: OPT := $(DEBUG)
