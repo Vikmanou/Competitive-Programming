@@ -1,5 +1,5 @@
 CXX := g++
-CXXFLAGS := -std=c++20 -w -Iinclude
+CXXFLAGS := -std=c++20 -O2 -w -Iinclude
 
 EXT := $(if $(findstring mingw,$(shell $(CXX) -dumpmachine)),.exe,)
 BUILD := build
