@@ -159,6 +159,40 @@ inline std::vector<ull> getFactors(ull n) {
 }
 
 
+inline std::vector<ull> getSmallestPrimeFactorsSieve(ull n) {
+    std::vector<ull> spf(n + 1);
+
+    for (ull i = 0; i <= n; ++i) {
+        spf[i] = i;
+    }
+
+    for (ull i = 2; i * i <= n; ++i) {
+        if (spf[i] != i) continue;
+
+        for (ull j = i * i; j <= n; j += i) {
+            if (spf[j] == j) spf[j] = i;
+        }
+    }
+
+    return spf;
+}
+
+
+// arg1 being the result of `getSmallestPrimeFactorsSieve` (the above function)
+inline std::vector<ull> distinctPrimeFactors(const std::vector<ull>& spf, ull n) {
+    std::vector<ull> ret;
+    ret.reserve(15);
+
+    while (n > 1) {
+        const ull p = spf[n];
+        ret.push_back(p);
+        do { n /= p; } while (n % p == 0);
+    }
+
+    return ret;
+}
+
+
 inline bool isDigitPermutation(ull num1, ull num2) {
     std::string nStr1 = std::to_string(num1);
     std::string nStr2 = std::to_string(num2);
