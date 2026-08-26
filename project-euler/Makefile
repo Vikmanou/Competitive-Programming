@@ -4,7 +4,7 @@ CXXFLAGS := -std=c++20 -O2 -w -Iinclude
 EXT := $(if $(findstring mingw,$(shell $(CXX) -dumpmachine)),.exe,)
 BUILD := build
 
-SRC := $(firstword $(wildcard solutions/$(p)/$(p).cpp unsolved/$(p)/$(p).cpp))
+SRC := $(wildcard solutions/$(p)/$(p).cpp)
 DIR := $(dir $(SRC))
 
 run:
@@ -18,7 +18,7 @@ run:
 	@echo
 
 list:
-	@ls -d solutions/*/ unsolved/*/ | sed 's|.*/\([^/]*\)/|\1|'
+	@ls -d solutions/*/ | sed 's|.*/\([^/]*\)/|\1|'
 
 clean:
 	rm -rf $(BUILD)
