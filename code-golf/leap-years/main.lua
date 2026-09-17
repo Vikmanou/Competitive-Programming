@@ -1,0 +1,1 @@
+for i=450,600 do _=i%4>i%25*3 or print(i*4)end
