@@ -23,21 +23,21 @@ pacman -S mingw-w64-ucrt-x86_64-gcc mingw-w64-ucrt-x86_64-gdb make mingw-w64-ucr
 
 ## Running
 
-Run from this directory. Pick the problem with `p=`.
+Run from this directory.
 
 ```
 cd project-euler
-make run p=0035
+make run 0035
 ```
 
 | command | what it does |
 | --- | --- |
-| `make run p=0035` | compile with `-O2`, run, print the answer |
-| `make debug p=0035` | compile unoptimized with checks turned on, run |
+| `make run 0035` | compile with `-O2`, run, print the answer |
+| `make debug 0035` | compile unoptimized with checks turned on, run |
 | `make list` | list every problem directory |
 | `make clean` | delete `build/` |
 
-Works for `unsolved/` too — `make run p=0810` finds it without being told
+Works for `unsolved/` too — `make run 0810` finds it without being told
 which folder.
 
 The binary runs with its own problem directory as the working directory, so
@@ -45,7 +45,7 @@ solutions that read `input.txt` find it.
 
 ## Debugging
 
-`make debug` builds with `-D_GLIBCXX_DEBUG` (bounds-checks vector and string
+`make debug 0035` builds with `-D_GLIBCXX_DEBUG` (bounds-checks vector and string
 indexing, validates iterators) and `-fsanitize=undefined -fsanitize-trap=undefined`
 (signed overflow, bad shifts, null deref).
 
