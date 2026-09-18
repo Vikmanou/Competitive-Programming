@@ -22,5 +22,10 @@ return {
 	GAU = 'D', GAC = 'D',
 	GAA = 'E', GAG = 'E',
 	AAU = 'N', AAC = 'N',
-	AAA = 'K', AAG = 'K'
+	AAA = 'K', AAG = 'K',
+
+	Start = 'AUG',
+	Stop1 = 'UAA',
+	Stop2 = 'UAG',
+	Stop3 = 'UGA'
 }

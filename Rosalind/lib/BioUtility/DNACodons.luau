@@ -19,5 +19,10 @@ return {
 	GAT = 'D', GAC = 'D',
 	GAA = 'E', GAG = 'E',
 	GGT = 'G', GGC = 'G', GGA = 'G', GGG = 'G',
-	TAA = 'Stop', TAG = 'Stop', TGA ='Stop'
+	TAA = 'Stop', TAG = 'Stop', TGA = 'Stop',
+
+	Start = 'ATG',
+	Stop1 = 'TAA',
+	Stop2 = 'TAG',
+	Stop3 = 'TGA'
 }
