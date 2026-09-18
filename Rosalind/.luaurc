@@ -1,0 +1,8 @@
+{
+  "aliases": {
+    "rosalind": "./lib",
+    "bio": "./lib/BioUtility",
+    "util": "./lib/Utility",
+    "problems": "."
+  }
+}
