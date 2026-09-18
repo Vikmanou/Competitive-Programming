@@ -7,27 +7,17 @@
 local net = require("@std/net")
 local UrlEncode = require("@util/UrlEncode")
 
-local BASE_URL = 'https://www.ncbi.nlm.nih.gov/nuccore/?term='
-
-local function createDateField(startDate: string, endDate: string): string
-	return UrlEncode(`"{startDate}"[Publication Date] : "{endDate}"[Publication Date]`)
-end
+local ESEARCH_URL = 'https://eutils.ncbi.nlm.nih.gov/entrez/eutils/esearch.fcgi?db=nuccore&rettype=count&term='
 
 local function solve(s: string): string
 	local genus, startDate, endDate = table.unpack(s:split('\n'))
-	
-	local searchUrl = `{BASE_URL}({createDateField(startDate, endDate)})+AND+{genus}%5BOrganism%5D`
-	
-	local response = net.request(searchUrl)
+
+	local term = `("{startDate}"[Publication Date] : "{endDate}"[Publication Date]) AND {genus}[Organism]`
+
+	local response = net.request(ESEARCH_URL .. UrlEncode(term))
 	assert(response.ok, `NCBI request failed with status {response.status}`)
 
-	local res = response.body
-	
-	if res:find'Items: %d+ to' then
-		return res:match'Items: %d+ to %d+ of (%d+)'
-	else
-		return res:match'Items: (%d+)'
-	end
+	return assert(response.body:match'<Count>(%d+)</Count>', `NCBI returned no count:\n{response.body}`)
 end
 
 if ... then
